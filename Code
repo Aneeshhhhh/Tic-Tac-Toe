@@ -1,0 +1,203 @@
+import javax.swing.JOptionPane;
+import java.util.Random;
+
+public class TicTacToe{
+    public static void main(String[] args){
+
+        int roww = 0;
+        int columnn = 0;
+        int Comprow = 0;
+        int Compcolumn = 0;
+        int[][]game = new int[3][3];
+        boolean Play = true;
+
+
+        while(Play){
+
+
+
+            String x = JOptionPane.showInputDialog("Please type your cell's row location(0-2)");
+            String y = JOptionPane.showInputDialog("Please tyoe your cell's column location(0-2)");
+            JOptionPane.showMessageDialog(null,"Your choice:" + "["+ x + "]" +"["+ y+ "]" );
+
+             roww = Integer.parseInt(x);
+             columnn = Integer.parseInt(y);
+
+             if(game[roww][columnn] == 0){
+                 game[roww][columnn] = 1;
+             }else{
+                 JOptionPane.showMessageDialog(null, "This position is already filled");
+                 continue;
+             }
+
+
+
+            Random random = new Random();
+            do{
+                Comprow = random.nextInt(3);
+                Compcolumn = random.nextInt(3);
+            }while(game[Comprow][Compcolumn] != 0);
+            if(game[Comprow][Compcolumn] == 0){
+                String Hii = String.valueOf(Comprow);
+                String Hey = String.valueOf(Compcolumn);
+                JOptionPane.showMessageDialog(null, "Computer choice:" + "[" + Hii + "]" + "[" + Hey + "]");
+                game[Comprow][Compcolumn] = 5;
+
+            }else{
+                JOptionPane.showMessageDialog(null,"No next move available");
+                continue;
+            }
+
+
+
+
+
+            int g00 = game[0][0];
+            int g01 = game[0][1];
+            int g02 = game[0][2];
+            int g10 = game[1][0];
+            int g11 = game[1][1];
+            int g12 = game[1][2];
+            int g20 = game[2][0];
+            int g21 = game[2][1];
+            int g22 = game[2][2];
+            int sum0 = game[0][0]+game[0][1]+game[0][2];
+            int sum1 = game[1][0]+game[1][1]+game[1][2];
+            int sum2 = game[2][0]+game[2][1]+game[2][2];
+            int diag1 = game[0][2]+game[1][1]+game[2][0];
+            int diag2 = game[0][0]+game[1][1]+game[2][2];
+            int col0 = game[0][0]+game[1][0]+game[2][0];
+            int col1 = game[0][1]+game[1][1]+game[2][2];
+            int col2 = game[0][2]+game[1][2]+game[2][2];
+
+            if(sum0 == 3){
+                JOptionPane.showMessageDialog(null, "You won!");
+                Play = false;
+                break;
+            } else if(sum0 == 15){
+                JOptionPane.showMessageDialog(null, "The computer won!");
+                Play = false;
+                break;
+            }
+
+            if(sum1 == 3){
+                JOptionPane.showMessageDialog(null, "You won!");
+                Play = false;
+                break;
+            } else if(sum1 == 15){
+                JOptionPane.showMessageDialog(null, "The computer won!");
+                Play = false;
+                break;
+            }
+
+            if(sum2 == 3){
+                JOptionPane.showMessageDialog(null, "You won!");
+                Play = false;
+                break;
+            } else if(sum2 == 15){
+                JOptionPane.showMessageDialog(null, "The computer won!");
+                Play = false;
+                break;
+            }
+
+            if(diag1 == 3){
+                JOptionPane.showMessageDialog(null, "You won!");
+                Play = false;
+                break;
+            } else if(diag1 == 15){
+                JOptionPane.showMessageDialog(null, "The computer won!");
+                Play = false;
+                break;
+            }
+
+            if(diag2 == 3){
+                JOptionPane.showMessageDialog(null, "You won!");
+                Play = false;
+                break;
+            } else if(diag2 == 15){
+                JOptionPane.showMessageDialog(null, "The computer won!");
+                Play = false;
+                break;
+            }
+
+            if(col0 == 3){
+                JOptionPane.showMessageDialog(null, "You won!");
+                Play = false;
+                break;
+            } else if(col0 == 15){
+                JOptionPane.showMessageDialog(null, "The computer won!");
+                Play = false;
+                break;
+            }
+
+            if(col1 == 3){
+                JOptionPane.showMessageDialog(null, "You won!");
+                Play = false;
+                break;
+            } else if(col1 == 15){
+                JOptionPane.showMessageDialog(null, "The computer won!");
+                Play = false;
+                break;
+            }
+
+            if(col2 == 3){
+                JOptionPane.showMessageDialog(null, "You won!");
+                Play = false;
+                break;
+            } else if(col2 == 15){
+                JOptionPane.showMessageDialog(null, "The computer won!");
+                Play = false;
+                break;
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            if((sum0 == 7 && sum0 == 11 )&&(sum1 == 7 && sum1 == 11)&&(sum2 == 7 && sum2 == 11)&&(diag1 == 7 && diag1 == 11)&&(diag2 == 7 && diag2 == 11)){
+                JOptionPane.showMessageDialog(null, "It's a draw!!");
+                Play = false;
+                break;
+            }
+
+
+
+
+
+
+
+
+
+
+
+        }
+
+
+
+
+
+
+
+
+    }
+}
