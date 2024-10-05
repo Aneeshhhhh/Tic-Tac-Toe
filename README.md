@@ -1,1 +1,1 @@
-A TicTacToe game made in java through the initialization of a 2D array and by the primary use of one parent while and multiple if conditions.(Code for a draw situation is yet to be figured)
+A TicTacToe game made in java through the initialization of a 2D array and by the primary use of one parent while and multiple if conditions.
